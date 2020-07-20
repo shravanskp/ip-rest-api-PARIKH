@@ -7,3 +7,55 @@ The REST API must support four endpoint:
   * **List IP addresses** - return all IP addresses in the system with their current status
   * **Acquire an IP** - set the status of a certain IP to “acquired”
   * **Release an IP** - set the status of a certain IP to “available”
+
+
+
+
+## Setup environment -
+
+#### Clone or Download the repository
+```bash
+git clone https://github.com/shravanskp/ip-rest-api-PARIKH.git
+cd ip-rest-api-PARIKH
+```
+
+#### Create virtual environment and activate
+```bash
+python -m venv env
+
+source env/bin/activate 
+```
+
+#### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+#### Database Migrations
+
+```bash
+python manage.py makemigraations
+
+python manage.py migrate
+```
+
+#### Now launch the server
+```bash
+python manage.py runserver
+```
+
+#### To run tests
+```bash
+python manage.py test
+```
+
+
+### Available Routes - 
+| Ent-Point  | Method  |
+|---|---|
+| http://localhost:8000/api/ips/  | POST |
+| http://localhost:8000/api/ips/  | GET  |
+| http://localhost:8000/api/ips/{id}/  | GET  |
+| http://localhost:8000/api/ips/{id}/acquire/  | PUT  |
+| http://localhost:8000/api/ips/{id}/release/  | PUT  |
